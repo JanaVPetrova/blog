@@ -1,3 +1,6 @@
+{<img src="https://coveralls.io/repos/JanaVPetrova/blog/badge.png?branch=master" alt="Coverage Status" />}[https://coveralls.io/r/JanaVPetrova/blog?branch=master]
+{<img src="https://travis-ci.org/JanaVPetrova/blog.png" />}[https://travis-ci.org/JanaVPetrova/blog]
+
 == README
 
 This README would normally document whatever steps are necessary to get the
