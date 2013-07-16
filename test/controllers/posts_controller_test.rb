@@ -40,7 +40,7 @@ class PostsControllerTest < ActionController::TestCase
   test "should destroy post" do
     request.env["HTTP_AUTHORIZATION"] = ActionController::HttpAuthentication::Basic.encode_credentials("dhh","secret")
 
-    post = Post.all.first
+    post = Post.first
 
     assert_difference("Post.count", -1) do
       delete :destroy, id: post
