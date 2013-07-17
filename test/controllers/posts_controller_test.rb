@@ -48,4 +48,10 @@ class PostsControllerTest < ActionController::TestCase
     
     assert_redirected_to posts_path
   end
+
+  test "should get edit" do
+    post = Post.all.first
+    
+    get :edit, id: post
+  end
 end
