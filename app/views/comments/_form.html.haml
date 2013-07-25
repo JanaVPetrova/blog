@@ -1,4 +1,6 @@
 = simple_form_for [@post, @post.comments.build], :defaults => { :input_html => { :class => "xxlarge" } } do |f|
-  = f.input :commenter
+  = f.input :commenter, :wrapper => :prepend, :label => false do
+    = content_tag :span, "Commenter", :class => "add-on"
+    = f.input_field :commenter
   = f.input :body
   = f.button :submit
