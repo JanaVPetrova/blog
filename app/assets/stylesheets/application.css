@@ -11,3 +11,16 @@
  *= require_self
  *= require_tree .
  */
+
+#post-comments {
+  background: #F5F5F5;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.container {
+  width: 940px;
+  margin: auto;
+}

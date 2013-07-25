@@ -1,11 +1,4 @@
-= form_for([@post, @post.comments.build]) do |f|
-  %p
-    = f.label :commenter
-    %br
-    = f.text_field :commenter
-  %p
-    = f.label :body
-    %br
-    = f.text_area :body
-  %p
-    = f.submit
+= simple_form_for [@post, @post.comments.build], :defaults => { :input_html => { :class => "xxlarge" } } do |f|
+  = f.input :commenter
+  = f.input :body
+  = f.button :submit

@@ -1,20 +1,18 @@
 %p
-  %strong
-    Title:
-    = @post.title
- 
+  %h4 Title:
+  = @post.title
 %p
-  %strong
-    Text:
-    = @post.text
- 
-%h2
-  Comments
-= render @post.comments
- 
-%h2
-  Add a comment:
-= render "comments/form"
- 
-= link_to 'Edit Post', edit_post_path(@post) |
-= link_to 'Back to Posts', posts_path
+  %h4 Text:
+  = @post.text
+
+%section#post-comments 
+  %h4
+    Comments
+  = render @post.comments
+   
+  %h4
+    Add a comment:
+  = render "comments/form"
+   
+  = link_to 'Edit Post', edit_post_path(@post) |
+  = link_to 'Back to Posts', posts_path
