@@ -3,4 +3,13 @@ class Post < ActiveRecord::Base
                     length: { minimum: 5 }
 
   has_many :comments, dependent: :destroy
+
+  state_machine :state, initial: :unviewed do
+    state :viewed
+    state :unviewed
+
+    event :view do
+      transition :unviewed => :viewed
+    end
+  end
 end

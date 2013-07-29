@@ -35,6 +35,8 @@ class PostsControllerTest < ActionController::TestCase
     post = Post.all.first
 
     get :show, id: post
+    post.reload
+    assert_equal post.state, "viewed"
   end
 
   test "should destroy post" do
