@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post].permit(:title, :text))
     if @post.save
-      redirect_to @post
+      redirect_to posts_path
     else
       render 'new'
     end
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @post.view!
+    @post.view
   end
 
   def edit
