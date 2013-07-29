@@ -14,7 +14,7 @@ class PostsControllerTest < ActionController::TestCase
       post :create, post: {title: "Some title"}
     end
     
-    assert_redirected_to post_path(assigns(:post))
+    assert_redirected_to posts_path
   end
 
   test "should edit post" do
