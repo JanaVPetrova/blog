@@ -12,4 +12,6 @@ class Post < ActiveRecord::Base
       transition :unviewed => :viewed
     end
   end
+
+  paginates_per 10
 end
