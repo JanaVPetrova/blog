@@ -28,10 +28,10 @@ class PostsControllerTest < ActionController::TestCase
     post_attrs = attributes_for :post
     put :update, id: @post, post: post_attrs
 
-    assert_response :redirect
-
     @post.reload
     assert_equal post_attrs[:title], @post.title
+
+    assert_response :redirect
   end
 
   test "should show post" do
