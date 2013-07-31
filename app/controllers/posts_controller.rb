@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params[:post].permit(:title, :text))
+    @post = Post.new(params[:post].permit(:title, :text, :state))
     if @post.save
       redirect_to posts_path
     else
@@ -20,7 +20,6 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @post.view
   end
 
   def edit
@@ -29,9 +28,9 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-   
-    if @post.update(params[:post].permit(:title, :text))
-      redirect_to @post
+
+    if @post.update_attributes(params[:post].permit(:title, :text, :state))
+      redirect_to posts_path
     else
       render 'edit'
     end

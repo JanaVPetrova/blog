@@ -4,12 +4,13 @@ class Post < ActiveRecord::Base
 
   has_many :comments, dependent: :destroy
 
-  state_machine :state, initial: :unviewed do
-    state :viewed
-    state :unviewed
+  state_machine :state, initial: :unpublished do
+    state :published
+    state :unpublished
 
-    event :view do
-      transition :unviewed => :viewed
+
+    event :publish do
+      transition :unpublished => :published
     end
   end
 
