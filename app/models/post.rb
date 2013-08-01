@@ -12,10 +12,6 @@ class Post < ActiveRecord::Base
     event :publish do
       transition :unpublished => :published
     end
-
-    event :unpublish do
-      transition :published => :unpublished
-    end
   end
 
   paginates_per 10
