@@ -158,7 +158,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   coveralls
-  factory_girl_rails
+  factory_girl_rails (~> 4.0)
   haml-rails
   jquery-rails
   kaminari
