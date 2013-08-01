@@ -38,13 +38,14 @@ class PostsControllerTest < ActionController::TestCase
     get :show, id: @post
   end
 
-  test "should destroy post" do
+  test "should delete post" do
     request.env["HTTP_AUTHORIZATION"] = ActionController::HttpAuthentication::Basic.encode_credentials("dhh","secret")
 
-    assert_difference('Post.count', -1) do
-      delete :destroy, id: @post
-    end
-    
+    delete :destroy, id: @post
+
+    @post.reload
+    assert_equal @post.deleted?, true
+
     assert_redirected_to posts_path
   end
 
