@@ -4,5 +4,6 @@
         = f.input_field :title
     = f.input :text, :input_html => { :class => "span6" }
     = f.collection_select :state_event, @post.state_transitions, :event, :human_to_name, :include_blank => @post.human_state_name
+    = f.collection_select :validation_state_event, @post.validation_state_transitions, :event, :human_to_name, :include_blank => @post.human_validation_state_name
     = f.button :submit, :class => 'btn-primary'
     = submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger"

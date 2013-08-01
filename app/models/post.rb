@@ -14,5 +14,18 @@ class Post < ActiveRecord::Base
     end
   end
 
+  state_machine :validation_state, initial: :restored do
+    state :restored
+    state :deleted
+
+    event :mark_as_deleted do
+      transition :restored => :deleted
+    end
+
+    event :restore do
+      transition :deleted => :restored
+    end
+  end
+
   paginates_per 10
 end

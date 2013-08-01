@@ -29,7 +29,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
 
-    if @post.update_attributes(params[:post].permit(:title, :text, :state_event))
+    if @post.update_attributes(params[:post].permit(:title, :text, :state_event, :validation_state_event))
       redirect_to posts_path
     else
       render 'edit'
@@ -38,7 +38,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
+    @post.mark_as_deleted
 
     redirect_to posts_path
   end
