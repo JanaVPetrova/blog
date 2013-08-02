@@ -17,9 +17,7 @@ class StateEventInput < SimpleForm::Inputs::FileInput
 
   private
   def machine_name
-    machine_name = attribute_name.to_s.split("_")
-    machine_name.delete "event"
-    machine_name.join("_")
+    machine_name = attribute_name.to_s.gsub "_event", ""
   end
 
   def transitions_method_name
