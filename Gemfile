@@ -29,6 +29,7 @@ end
 group :test do
   gem "coveralls", require: false
   gem "tconsole"
+  gem "turn"
   gem "factory_girl_rails", "~> 4.0"
 end
 
