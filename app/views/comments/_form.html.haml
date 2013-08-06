@@ -1,4 +1,4 @@
-= simple_form_for [@post, @post.comments.build], :html => { :class => 'form-horizontal' } do |f|
+= simple_form_for [@post.user, @post, @post.comments.build], :html => { :class => 'form-horizontal' } do |f|
   = f.input :commenter, :wrapper => :prepend, :label => false do
     = content_tag :span, "Commenter", :class => "add-on"
     = f.input_field :commenter

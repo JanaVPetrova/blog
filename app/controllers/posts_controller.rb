@@ -1,36 +1,39 @@
 class PostsController < ApplicationController
-  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
-  
   def index
-    @posts = Post.page params[:page]
+    @user = User.find params[:user_id]
+    @posts = @user.posts.page params[:page]
   end
 
   def new
+    @user = User.find params[:user_id]
     @post = Post.new
   end
 
   def create
-    @post = Post.new(params[:post].permit(:title, :text, :state))
+    @user = User.find params[:user_id]
+    @post = @user.posts.build post_params
     if @post.save
-      redirect_to posts_path
+      redirect_to user_posts_path
     else
       render 'new'
     end
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.find params[:id]
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @post = Post.find params[:id]
+    @user = @post.user
   end
 
   def update
+    @user = User.find params[:user_id]
     @post = Post.find(params[:id])
 
-    if @post.update_attributes(params[:post].permit(:title, :text, :state_event, :validation_state_event))
-      redirect_to posts_path
+    if @post.update_attributes post_params
+      redirect_to user_posts_path
     else
       render 'edit'
     end
@@ -40,6 +43,11 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.mark_as_deleted
 
-    redirect_to posts_path
+    redirect_to user_posts_path
+  end
+
+  private
+  def post_params
+    params.require(:post).permit(:title, :text, :state, :validation_state_event)
   end
 end

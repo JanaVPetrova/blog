@@ -1,8 +1,9 @@
 Blog::Application.routes.draw do
-  get "welcome/index"
-
-  resources :posts do
-    resources :comments
+  resources :users do
+    resources :posts do
+      resources :comments
+    end
+    resources :comments, only: :index
   end
 
   root to: "welcome#index"

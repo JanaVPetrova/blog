@@ -6,27 +6,23 @@ class PostsControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
-    get :index
     assert_response :success
     assert_not_nil @post
   end
 
   test "should create post" do
-    request.env["HTTP_AUTHORIZATION"] = ActionController::HttpAuthentication::Basic.encode_credentials("dhh","secret")
-    
     attrs = attributes_for :post
 
-    post :create, post: attrs
-    assert_equal Post.last.title, attrs[:title]
+    assert_difference("Post.count") do
+      post :create, user_id: @post.user, post: attrs
+    end
     
-    assert_redirected_to posts_path
+    assert_redirected_to user_posts_path
   end
 
   test "should edit post" do
-    request.env["HTTP_AUTHORIZATION"] = ActionController::HttpAuthentication::Basic.encode_credentials("dhh","secret")
-    
     post_attrs = attributes_for :post
-    put :update, id: @post, post: post_attrs
+    put :update, user_id: @post.user, id: @post, post: post_attrs
 
     @post.reload
     assert_equal post_attrs[:title], @post.title
@@ -35,21 +31,19 @@ class PostsControllerTest < ActionController::TestCase
   end
 
   test "should show post" do
-    get :show, id: @post
+    get :show, user_id: @post.user, id: @post
   end
 
   test "should delete post" do
-    request.env["HTTP_AUTHORIZATION"] = ActionController::HttpAuthentication::Basic.encode_credentials("dhh","secret")
-
-    delete :destroy, id: @post
+    delete :destroy, user_id: @post.user, id: @post
 
     @post.reload
     assert_equal @post.deleted?, true
 
-    assert_redirected_to posts_path
+    assert_redirected_to user_posts_path
   end
 
   test "should get edit" do
-    get :edit, id: @post
+    get :edit, user_id: @post.user, id: @post
   end
 end
