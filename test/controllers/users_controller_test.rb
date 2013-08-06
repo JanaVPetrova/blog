@@ -30,4 +30,10 @@ class UsersControllerTest < ActionController::TestCase
     @user.reload
     assert_equal attrs[:login], @user.login
   end
+
+  test "should destroy user" do
+    assert_difference("User.count", -1) do
+      delete :destroy, id: @user
+    end
+  end
 end
