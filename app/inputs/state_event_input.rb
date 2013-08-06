@@ -6,7 +6,7 @@ class StateEventInput < SimpleForm::Inputs::FileInput
   def input
     label_method = :human_to_name
     value_method = :event
-    input_options = { include_blank: object.send(human_state_name_method) }
+    input_options.merge!({ include_blank: object.send(human_state_name_method) })
 
     out = @builder.collection_select(
       attribute_name, collection, value_method, label_method,
