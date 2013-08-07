@@ -255,39 +255,14 @@ ru:
   activerecord:
     errors:
       <<: *errors
-  simple_form:
-    labels:
-      user:
-        login: Логин
-        password: Пароль
-      post:
-        title: Название
-        text: Текст
-        state_event: Состояние
-        validation_state_event: Состояние активности
   users:
     index:
-      login: Логин
       listing_users: Список пользователей
-      actions: Действия
-      show: Показать
-      posts: Посты
-      edit: Редактировать
-    show:
-      user: Пользователь
-      login: Логин
-      back: Назад
     edit:
       edit_user: Редактировать пользователя
-      back: Назад
   posts:
     index:
       listing_posts: Список постов
-      title: Названи
-      text: Текст
-      state: Состояние
-      validation_state: Состояние активности
-      actions: Действия
     new:
       new_post: Новый пост
     edit:
