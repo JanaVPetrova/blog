@@ -12,11 +12,9 @@ class PostsControllerTest < ActionController::TestCase
 
   test "should create post" do
     attrs = attributes_for :post
-
-    assert_difference("Post.count") do
-      post :create, user_id: @post.user, post: attrs
-    end
+    post :create, user_id: @post.user, post: attrs
     
+    assert_equal attrs[:title], Post.last.title
     assert_redirected_to user_posts_path
   end
 
@@ -25,8 +23,8 @@ class PostsControllerTest < ActionController::TestCase
     put :update, user_id: @post.user, id: @post, post: post_attrs
 
     @post.reload
-    assert_equal post_attrs[:title], @post.title
 
+    assert_equal post_attrs[:title], @post.title
     assert_response :redirect
   end
 
@@ -38,8 +36,8 @@ class PostsControllerTest < ActionController::TestCase
     delete :destroy, user_id: @post.user, id: @post
 
     @post.reload
-    assert_equal @post.deleted?, true
 
+    assert_equal @post.deleted?, true
     assert_redirected_to user_posts_path
   end
 
