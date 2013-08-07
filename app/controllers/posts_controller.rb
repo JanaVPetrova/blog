@@ -1,19 +1,17 @@
 class PostsController < ApplicationController
+  before_action :sing_in_owner, except: [:index, :show]
   def index
-    @user = User.find params[:user_id]
-    @posts = @user.posts.page params[:page]
+    @posts = Post.page params[:page]
   end
 
   def new
-    @user = User.find params[:user_id]
     @post = Post.new
   end
 
   def create
-    @user = User.find params[:user_id]
-    @post = @user.posts.build post_params
+    @post = Post.new post_params
     if @post.save
-      redirect_to user_posts_path
+      redirect_to posts_path
     else
       render 'new'
     end
@@ -25,15 +23,13 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find params[:id]
-    @user = @post.user
   end
 
   def update
-    @user = User.find params[:user_id]
     @post = Post.find(params[:id])
 
     if @post.update_attributes post_params
-      redirect_to user_posts_path
+      redirect_to posts_path
     else
       render 'edit'
     end
@@ -43,7 +39,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.mark_as_deleted
 
-    redirect_to user_posts_path
+    redirect_to posts_path
   end
 
   private

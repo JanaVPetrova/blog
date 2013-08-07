@@ -12,15 +12,15 @@ class PostsControllerTest < ActionController::TestCase
 
   test "should create post" do
     attrs = attributes_for :post
-    post :create, user_id: @post.user, post: attrs
+    post :create, post: attrs
     
     assert_equal attrs[:title], Post.last.title
-    assert_redirected_to user_posts_path
+    assert_redirected_to posts_path
   end
 
   test "should edit post" do
     post_attrs = attributes_for :post
-    put :update, user_id: @post.user, id: @post, post: post_attrs
+    put :update, id: @post, post: post_attrs
 
     @post.reload
 
@@ -29,19 +29,19 @@ class PostsControllerTest < ActionController::TestCase
   end
 
   test "should show post" do
-    get :show, user_id: @post.user, id: @post
+    get :show, id: @post
   end
 
   test "should delete post" do
-    delete :destroy, user_id: @post.user, id: @post
+    delete :destroy, id: @post
 
     @post.reload
 
     assert_equal @post.deleted?, true
-    assert_redirected_to user_posts_path
+    assert_redirected_to posts_path
   end
 
   test "should get edit" do
-    get :edit, user_id: @post.user, id: @post
+    get :edit, id: @post
   end
 end
