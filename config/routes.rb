@@ -7,5 +7,7 @@ Blog::Application.routes.draw do
     resources :comments
   end
 
+  resource :session
+
   root to: "welcome#index"
 end

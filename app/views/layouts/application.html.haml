@@ -8,5 +8,20 @@
     = csrf_meta_tags
 
 %body
+  .navbar.navbar-fixed-top
+    .navbar-inner
+      .container
+        %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.brand(href="/users") Blog
+        .container.nav-collapse
+          %ul.nav
+            %li= link_to t('.new_post'), new_post_path
+            %li= link_to t('.sign_in'), new_session_path
+            %li= link_to t('.register'), new_user_path
+
   .container
-    = yield
+    .row
+      = yield

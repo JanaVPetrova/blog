@@ -10,6 +10,7 @@ load 'config/configus.rb'
 module Blog
   class Application < Rails::Application
     config.i18n.default_locale = :ru
+    config.autoload_paths += Dir["#{config.root}/lib/**/"]
     #config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

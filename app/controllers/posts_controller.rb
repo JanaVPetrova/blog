@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  before_action :sing_in_owner, except: [:index, :show]
   def index
     @posts = Post.page params[:page]
   end
