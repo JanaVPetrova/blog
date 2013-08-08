@@ -3,6 +3,7 @@ require "test_helper"
 class PostsControllerTest < ActionController::TestCase
   setup do
     @post = create :post
+    @owner = User.find_by_login "owner"
   end
 
   test "should get index" do
@@ -15,7 +16,7 @@ class PostsControllerTest < ActionController::TestCase
     post :create, post: attrs
     
     assert_equal attrs[:title], Post.last.title
-    assert_redirected_to posts_path
+    assert_response :redirect
   end
 
   test "should edit post" do
@@ -33,12 +34,13 @@ class PostsControllerTest < ActionController::TestCase
   end
 
   test "should delete post" do
+    sign_in @owner
     delete :destroy, id: @post
 
     @post.reload
 
-    assert_equal @post.deleted?, true
-    assert_redirected_to posts_path
+    assert_equal true, @post.deleted?
+    assert_response :redirect
   end
 
   test "should get edit" do

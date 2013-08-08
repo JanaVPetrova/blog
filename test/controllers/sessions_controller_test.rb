@@ -7,10 +7,9 @@ class SessionsControllerTest < ActionController::TestCase
 
   test "should login" do
     attrs = { login: @user.login, password: @user.password }
-    post :create, user: attrs
+    post :create, user_sign_in_type: attrs
 
-    assert_response :redirect
-    assert signed_in?
+    assert_equal true, signed_in?
   end
 
   test "should logout" do
