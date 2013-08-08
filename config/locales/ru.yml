@@ -16,16 +16,24 @@ ru:
   posts:
     index:
       listing_posts: "Список постов"
-      back: "Назад"
-      cancel: "Отмена"
       confirm: "Вы уверены?"
       destroy: "Удалить"
       new: "Создать"
       edit: "Редактировать"
       show: "Показать"
+      title: "Название"
+      text:
+      state:
+      validation_state:
+      actions:
     new:
       new_post: "Новый пост"
       back: "Назад"
       cancel: "Отмена"
     edit:
       edit_post: "Редактировать пост"
+  layouts:
+    application:
+      sign_in: "Войти"
+      sign_out: "Выйти"
+      register: "Зарегистрироваться"
