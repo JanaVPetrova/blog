@@ -3,7 +3,7 @@ require "test_helper"
 class PostsControllerTest < ActionController::TestCase
   setup do
     @post = create :post
-    @owner = User.find_by_login "owner"
+    @owner = User.find_by_login configus.owner.login
   end
 
   test "should get index" do

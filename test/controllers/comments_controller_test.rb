@@ -6,9 +6,11 @@ class CommentsControllerTest < ActionController::TestCase
   end
 
   test "should create comment" do 
+    sign_in @comment.user
     attrs = attributes_for :comment
+    attrs[:user_id] = @comment.user.id
 
-    post :create, user_id: @comment.post.user, post_id: @comment.post, comment: attrs
+    post :create, post_id: @comment.post, comment: attrs
 
     assert_equal attrs[:commenter], Comment.last.commenter
     assert_response :redirect
