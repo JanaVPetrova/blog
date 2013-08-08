@@ -4,9 +4,10 @@ class PostsController < ApplicationController
   end
 
   def new
-    if signed_in? && current_user.owner?
+    if current_user_owner?
       @post = Post.new
     else
+      flash[:error] = "Access denied"
       redirect_to posts_path
     end
   end
@@ -25,7 +26,12 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find params[:id]
+    if current_user_owner?
+      @post = Post.find params[:id]
+    else
+      flash[:error] = "Access denied"
+      redirect_to posts_path
+    end
   end
 
   def update
@@ -39,9 +45,12 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    @post.mark_as_deleted
-
+    if current_user_owner?
+      @post = Post.find(params[:id])
+      @post.mark_as_deleted
+    else
+      flash[:error] = "Access denied"
+    end
     redirect_to posts_path
   end
 

@@ -11,9 +11,8 @@ module AuthHelper
     !session[:user_id].nil?
   end
 
-  def owner?
-    user = User.find session[:user_id]
-    user.login == config.owner.login
+  def current_user_owner?
+    current_user.try(:login) == configus.owner.login
   end
 
   def current_user
