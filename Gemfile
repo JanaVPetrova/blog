@@ -12,6 +12,7 @@ gem "simple_form", "~> 3.0.0.rc"
 gem "state_machine"
 gem "kaminari"
 gem "configus"
+gem "virtus"
 
 # Use CoffeeScript for .js.coffee assets and views
 gem "coffee-rails", "~> 4.0.0"

@@ -15,11 +15,15 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        %a.brand(href="/users") Blog
+        %a.brand(href="/posts") Blog
         .container.nav-collapse
           %ul.nav
             %li= link_to t('.new_post'), new_post_path
-            %li= link_to t('.sign_in'), new_session_path
+            - if signed_in?
+              %li= link_to current_user.login, user_path(current_user)
+              %li= link_to t('.sign_out'), session_path, method: :delete
+            - else
+              %li= link_to t('.sign_in'), new_session_path
             %li= link_to t('.register'), new_user_path
 
   .container

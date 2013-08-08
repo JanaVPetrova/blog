@@ -5,8 +5,8 @@ Configus.build Rails.env do
     end
 
     owner do
-      login "login"
-      password "password"
+      login "owner"
+      password "owner"
     end
   end
 
