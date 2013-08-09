@@ -9,6 +9,9 @@ ru:
       new: "Создать"
       edit: "Редактировать"
       show: "Показать"
+      login: "Логин"
+      actions: "Действия"
+      posts: "Посты"
     edit:
       edit_user: "Редактировать пользователя"
       back: "Назад"
@@ -22,18 +25,29 @@ ru:
       edit: "Редактировать"
       show: "Показать"
       title: "Название"
-      text:
-      state:
-      validation_state:
-      actions:
+      text: "Текст"
+      state: "Сотояние"
+      validation_state: "Статус"
+      actions: "Действия"
     new:
       new_post: "Новый пост"
       back: "Назад"
       cancel: "Отмена"
     edit:
       edit_post: "Редактировать пост"
+    show:
+      comments: "Комметарии"
+      add_comment: "Добавить комментарий"
+      back: "Назад"
+      edit: "Редактировать"
+  comments:
+    comment:
+      commenter: "Имя"
+      comment: "Текст комментария"
+      destroy: "Удалить"
   layouts:
     application:
       sign_in: "Войти"
       sign_out: "Выйти"
       register: "Зарегистрироваться"
+      blog: "Блог"
