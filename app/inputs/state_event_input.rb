@@ -1,4 +1,4 @@
-class StateEventInput < SimpleForm::Inputs::FileInput
+class StateEventInput < SimpleForm::Inputs::CollectionSelectInput
   def collection
     object.send(transitions_method_name)
   end
