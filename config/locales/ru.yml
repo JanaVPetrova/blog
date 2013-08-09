@@ -18,6 +18,9 @@ ru:
       cancel: "Отмена"
     destroy:
       access_denied: "Недостаточно прав"
+    show:
+      user: "Пользователь"
+      back: "Назад"
   posts:
     form:
       cancel: "Отмена"
