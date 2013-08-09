@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     if current_user_owner?
       @post = Post.new
     else
-      flash[:error] = "Access denied"
+      flash[:error] = t('.access_denied')
       redirect_to posts_path
     end
   end
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
     if current_user_owner?
       @post = Post.find params[:id]
     else
-      flash[:error] = "Access denied"
+      flash[:error] = t('.access_denied')
       redirect_to posts_path
     end
   end
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
       @post.mark_as_deleted
     else
-      flash[:error] = "Access denied"
+      flash[:error] = t('.access_denied')
     end
     redirect_to posts_path
   end

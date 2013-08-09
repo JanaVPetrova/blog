@@ -16,7 +16,11 @@ ru:
       edit_user: "Редактировать пользователя"
       back: "Назад"
       cancel: "Отмена"
+    destroy:
+      access_denied: "Недостаточно прав"
   posts:
+    form:
+      cancel: "Отмена"
     index:
       listing_posts: "Список постов"
       confirm: "Вы уверены?"
@@ -35,19 +39,29 @@ ru:
       cancel: "Отмена"
     edit:
       edit_post: "Редактировать пост"
+      back: "Назад"
     show:
       comments: "Комметарии"
       add_comment: "Добавить комментарий"
       back: "Назад"
       edit: "Редактировать"
+      comfirm: "Вы уверены?"
+    destroy:
+      access_denied: "Недостаточно прав"
   comments:
     comment:
       commenter: "Имя"
       comment: "Текст комментария"
       destroy: "Удалить"
+      confirm: "Вы уверены?"
+    destroy:
+      confirm: "Вы уверены?"
   layouts:
     application:
       sign_in: "Войти"
       sign_out: "Выйти"
       register: "Зарегистрироваться"
       blog: "Блог"
+  sessions:
+    new:
+      sign_in: "Войти"

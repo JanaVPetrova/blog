@@ -36,9 +36,14 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find params[:id]
-    @user.destroy
-    redirect_to users_path
+    if current_user_owner?
+      @user = User.find params[:id]
+      @user.destroy
+      redirect_to users_path
+    else
+      flash[:error] = t('.access_denied')
+      redirect_to users_path
+    end
   end
 
   private
