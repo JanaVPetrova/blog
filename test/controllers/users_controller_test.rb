@@ -32,6 +32,8 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should destroy user" do
+    owner = User.find_by_login configus.owner.login
+    sign_in owner
     delete :destroy, id: @user
 
     assert !User.exists?(@user)
