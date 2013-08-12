@@ -7,8 +7,12 @@ class CommentsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.find(params[:id])
-    @comment.destroy
+    if current_user == @post.user
+      @comment = @post.comments.find(params[:id])
+      @comment.destroy
+    else
+      flash[:error] = t('.access_denied')
+    end
     redirect_to post_path(@post)
   end
 

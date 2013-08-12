@@ -59,6 +59,7 @@ ru:
       confirm: "Вы уверены?"
     destroy:
       confirm: "Вы уверены?"
+      access_denied: "Недостаточно прав"
   layouts:
     application:
       sign_in: "Войти"
