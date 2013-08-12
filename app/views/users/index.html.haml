@@ -14,4 +14,3 @@
           = link_to t('.posts'), user_path(user), :class => 'btn btn-mini'
           = link_to t('.edit'), edit_user_path(user), :class => 'btn btn-mini'
           = link_to t('.destroy'), user_path(user), :method => :delete, :data => { :confirm => t('.confirm') }, :class => 'btn btn-mini btn-danger'
-= link_to t('.new', :default => t("helpers.links.new")), new_user_path, :class => 'btn btn-primary'

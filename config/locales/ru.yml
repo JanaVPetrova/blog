@@ -40,15 +40,18 @@ ru:
       new_post: "Новый пост"
       back: "Назад"
       cancel: "Отмена"
+      access_denied: "Недостаточно прав"
     edit:
       edit_post: "Редактировать пост"
       back: "Назад"
+      access_denied: "Недостаточно прав"
     show:
       comments: "Комметарии"
       add_comment: "Добавить комментарий"
       back: "Назад"
       edit: "Редактировать"
       comfirm: "Вы уверены?"
+      access_denied: "Недостаточно прав"
     destroy:
       access_denied: "Недостаточно прав"
   comments:

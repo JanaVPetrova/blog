@@ -13,7 +13,9 @@ ru:
         title: 'Название'
         text: 'Текст'
         state: 'Состояние'
-        validation_state: 'Состояние активности'
+        state_event: 'Состояние'
+        validation_state_event: 'Статус'
+        validation_state: 'Статус'
       comment:
         commenter: 'Имя'
         body: 'Текст комментария'
