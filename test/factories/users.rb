@@ -4,8 +4,8 @@ FactoryGirl.define do
     password { generate :string }
   end
 
-  factory :owner, class: User do
-    login "owner"
-    password "owner"
+  factory :owner, parent: :user do
+    login configus.owner.login
+    password configus.owner.password
   end
 end
