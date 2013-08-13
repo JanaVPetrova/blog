@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     if current_user == @comment.user
       @comment.destroy
     else
-      flash[:error] = t('.access_denied')
+      f(:error)
     end
     redirect_to post_path(@post)
   end

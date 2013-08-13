@@ -41,7 +41,7 @@ class UsersController < ApplicationController
       @user.destroy
       redirect_to users_path
     else
-      flash[:error] = t('.access_denied')
+      f(:error)
       redirect_to users_path
     end
   end

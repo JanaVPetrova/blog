@@ -15,6 +15,7 @@ gem "configus"
 gem "virtus"
 gem "twitter-bootstrap-rails"
 gem "russian"
+gem "term-ansicolor"
 
 # Use CoffeeScript for .js.coffee assets and views
 gem "coffee-rails", "~> 4.0.0"
