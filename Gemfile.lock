@@ -131,6 +131,7 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
     simplecov-html (0.7.1)
+    spring (0.0.10)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -141,7 +142,6 @@ GEM
       activesupport (>= 3.0)
       sprockets (~> 2.8)
     state_machine (1.2.0)
-    tconsole (1.0.0)
     term-ansicolor (1.0.7)
     therubyracer (0.11.4)
       libv8 (~> 3.11.8.12)
@@ -189,8 +189,8 @@ DEPENDENCIES
   sass-rails (~> 4.0.0)
   sdoc
   simple_form (~> 3.0.0.rc)
+  spring
   state_machine
-  tconsole
   term-ansicolor
   therubyracer
   turbolinks
