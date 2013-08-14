@@ -2,8 +2,8 @@
 %table.table.table-striped
   %thead
     %tr
-      %th=t '.login'
-      %th=t '.actions'
+      %th= ham(:user, :login)
+      %th= ham(:user, :actions)
   %tbody
     - @users.each do |user|
       %tr

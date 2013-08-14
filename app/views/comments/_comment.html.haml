@@ -1,9 +1,9 @@
 %p
-  %strong= t('.commenter')
+  %strong= ham(:comment, :commenter)
   = comment.user.login
  
 %p
-  %strong= t('.comment')
+  %strong= ham(:comment, :body)
   = comment.body
  
 %p

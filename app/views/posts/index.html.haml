@@ -2,11 +2,11 @@
 %table.table.table-striped
   %thead
     %tr
-      %th=t '.title'
-      %th=t '.text'
-      %th=t '.state'
-      %th=t '.validation_state'
-      %th=t '.actions'
+      %th= ham(:post, :title)
+      %th= ham(:post, :text)
+      %th= ham(:post, :state)
+      %th= ham(:post, :validation_state)
+      %th= ham(:post, :actions)
   %tbody
     - @posts.each do |post|
       %tr
