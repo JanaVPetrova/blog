@@ -5,7 +5,7 @@ FactoryGirl.define do
   end
 
   factory :owner, parent: :user do
-    login "owner"
-    password "owner"
+    login { configus.owner.login }
+    password { configus.owner.password }
   end
 end
