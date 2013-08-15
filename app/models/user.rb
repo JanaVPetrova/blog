@@ -3,5 +3,5 @@ class User < ActiveRecord::Base
                     uniqueness: true
   validates :password, presence: true
 
-  has_many :comments, dependent: :destroy
+  has_many :comments
 end
