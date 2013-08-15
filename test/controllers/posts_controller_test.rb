@@ -12,6 +12,7 @@ class PostsControllerTest < ActionController::TestCase
   end
 
   test "should create post" do
+    sign_in @owner
     attrs = attributes_for :post
     post :create, post: attrs
     
@@ -20,6 +21,8 @@ class PostsControllerTest < ActionController::TestCase
   end
 
   test "should edit post" do
+    sign_in @owner
+
     post_attrs = attributes_for :post
     put :update, id: @post, post: post_attrs
 

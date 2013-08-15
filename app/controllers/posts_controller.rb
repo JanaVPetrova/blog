@@ -13,12 +13,18 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = PostEditType.new(params[:post])
-    if @post.save
-      f(:success)
-      redirect_to posts_path
+    if current_user_owner?
+      @post = PostEditType.new(params[:post])
+      if @post.save
+        f(:success)
+        redirect_to posts_path
+      else
+        f(:error)
+        render 'new'
+      end
     else
-      render 'new'
+      f(:error)
+      redirect_to posts_path
     end
   end
 
@@ -38,12 +44,19 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post = @post.becomes PostEditType
+    if current_user_owner?
+      @post = @post.becomes PostEditType
 
-    if @post.update_attributes params[:post]
-      redirect_to posts_path
+      if @post.update_attributes params[:post]
+        f(:success)
+        redirect_to posts_path
+      else
+        f(:error)
+        render 'edit'
+      end
     else
-      render 'edit'
+      f(:error)
+      redirect_to @post
     end
   end
 
