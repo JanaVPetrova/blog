@@ -2,12 +2,12 @@ require 'test_helper'
 
 class CommentsControllerTest < ActionController::TestCase
   setup do
-    @comment = create :post_comment
+    @comment = create 'post/comment'
   end
 
   test "should create comment" do 
     sign_in @comment.user
-    attrs = attributes_for :post_comment
+    attrs = attributes_for 'post/comment'
     attrs[:user_id] = @comment.user.id
 
     post :create, post_id: @comment.post, comment: attrs
