@@ -17,6 +17,8 @@ gem "virtus"
 gem "twitter-bootstrap-rails"
 gem "russian"
 gem "term-ansicolor"
+gem 'carrierwave'
+gem 'mini_magick'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem "coffee-rails", "~> 4.0.0"
