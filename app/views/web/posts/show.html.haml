@@ -6,8 +6,8 @@
 %br
 = link_to t('.back'), posts_path
 
-%section#post-comments 
+%section#post-comments
   %h4= t('.comments')
   = render @post.comments
   %h4= t('.add_comment')
-  = render "comments/form"
+  = render "web/comments/form"

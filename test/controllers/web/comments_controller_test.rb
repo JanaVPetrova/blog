@@ -1,11 +1,11 @@
 require 'test_helper'
 
-class CommentsControllerTest < ActionController::TestCase
+class Web::CommentsControllerTest < ActionController::TestCase
   setup do
     @comment = create 'post/comment'
   end
 
-  test "should create comment" do 
+  test "should create comment" do
     sign_in @comment.user
     attrs = attributes_for 'post/comment'
     attrs[:user_id] = @comment.user.id

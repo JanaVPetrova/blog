@@ -1,10 +1,10 @@
 %p
   %strong= ham(:post_comment, :commenter)
   = comment.user.login
- 
+
 %p
   %strong= ham(:post_comment, :body)
   = comment.body
- 
+
 %p
   = link_to t('.destroy'), [comment.post, comment], method: :delete, data: { :confirm => t('.confirm') }

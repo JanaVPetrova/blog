@@ -1,15 +1,18 @@
 ru:
   flash:
-    posts:
-      destroy:
-        error: "Недостаточно прав"
-      edit:
-        error: "Недостаточно прав"
-      new:
-        error: "Недостаточно прав"
-    comments:
-      destroy:
-        error: "Недостаточно прав"
-    users:
-      destroy:
-        error: "Недостаточно прав"
+    web:
+      posts:
+        destroy:
+          error: "Недостаточно прав"
+        edit:
+          error: "Недостаточно прав"
+        new:
+          error: "Недостаточно прав"
+        create:
+          success: "Пост создан"
+      comments:
+        destroy:
+          error: "Недостаточно прав"
+      users:
+        destroy:
+          error: "Недостаточно прав"

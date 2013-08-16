@@ -1,4 +1,4 @@
-class PostsController < ApplicationController
+class Web::PostsController < Web::ApplicationController
   def index
     @posts = Post.page params[:page]
   end
@@ -29,13 +29,13 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find params[:id]
+    @post = resource_post
     @comment = Post::Comment.new
   end
 
   def edit
     if current_user_owner?
-      @post = Post.find params[:id]
+      @post = resource_post
     else
       f(:error)
       redirect_to posts_path
@@ -43,7 +43,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
+    @post = resource_post
     if current_user_owner?
       @post = @post.becomes PostEditType
 

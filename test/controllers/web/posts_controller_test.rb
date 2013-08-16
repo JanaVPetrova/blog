@@ -1,6 +1,6 @@
 require "test_helper"
 
-class PostsControllerTest < ActionController::TestCase
+class Web::PostsControllerTest < ActionController::TestCase
   setup do
     @post = create :post
     @owner = create :owner
@@ -15,7 +15,7 @@ class PostsControllerTest < ActionController::TestCase
     sign_in @owner
     attrs = attributes_for :post
     post :create, post: attrs
-    
+
     assert_equal attrs[:title], Post.last.title
     assert_response :redirect
   end
