@@ -1,10 +1,12 @@
 class Web::UsersController < Web::ApplicationController
   def index
     @users = User.all
+    add_breadcrumb :index, :users_path
   end
 
   def new
     @user = User.new
+    add_breadcrumb :new, :new_user_path
   end
 
   def create
@@ -19,10 +21,12 @@ class Web::UsersController < Web::ApplicationController
 
   def show
     @user = User.find params[:id]
+    add_breadcrumb :show, @user
   end
 
   def edit
     @user = User.find params[:id]
+    add_breadcrumb :index, :edit_user_path
   end
 
   def update

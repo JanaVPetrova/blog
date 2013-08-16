@@ -1,6 +1,7 @@
 class Web::PostsController < Web::ApplicationController
   def index
     @posts = Post.page params[:page]
+    add_breadcrumb :index, :posts_path
   end
 
   def new
@@ -10,6 +11,7 @@ class Web::PostsController < Web::ApplicationController
       f(:error)
       redirect_to posts_path
     end
+    add_breadcrumb :new, :new_post_path
   end
 
   def create
@@ -31,6 +33,7 @@ class Web::PostsController < Web::ApplicationController
   def show
     @post = resource_post
     @comment = Post::Comment.new
+    add_breadcrumb :show, @post
   end
 
   def edit
@@ -40,6 +43,7 @@ class Web::PostsController < Web::ApplicationController
       f(:error)
       redirect_to posts_path
     end
+    add_breadcrumb :edit, :edit_post_path
   end
 
   def update

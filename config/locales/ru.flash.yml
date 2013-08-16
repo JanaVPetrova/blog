@@ -10,6 +10,9 @@ ru:
           error: "Недостаточно прав"
         create:
           success: "Пост создан"
+        update:
+          error: "Недостаточно прав"
+          success: "Пост успешно отредактирован"
       comments:
         destroy:
           error: "Недостаточно прав"
