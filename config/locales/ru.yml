@@ -29,6 +29,12 @@ ru:
         user: "Пользователь"
         back: "Назад"
     posts:
+      comments:
+        comment:
+          destroy: "Удалить"
+          confirm: "Вы уверены?"
+          commenter: "Имя"
+          body: "Текст комментария"
       form:
         cancel: "Отмена"
       index:

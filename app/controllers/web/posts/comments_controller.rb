@@ -19,7 +19,7 @@ class Web::Posts::CommentsController < Web::Posts::ApplicationController
   private
   def comment_params
     #FIXME по-человечески указывать user_id в comment_params
-    res = params.require(:comment).permit(:body)
+    res = params.require(:post_comment).permit(:body)
     res[:user_id] = current_user.id
     res
   end
