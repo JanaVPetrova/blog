@@ -54,6 +54,7 @@ ru:
         back: "Назад"
         cancel: "Отмена"
         access_denied: "Недостаточно прав"
+        post_image: "Картинка"
       edit:
         edit_post: "Редактировать пост"
         back: "Назад"
