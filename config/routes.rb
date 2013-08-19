@@ -5,7 +5,9 @@ Blog::Application.routes.draw do
     end
 
     resources :posts do
-      resources :comments
+      scope module: :posts do
+        resources :comments
+      end
     end
 
     resource :session

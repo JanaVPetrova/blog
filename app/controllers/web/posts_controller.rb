@@ -31,14 +31,14 @@ class Web::PostsController < Web::ApplicationController
   end
 
   def show
-    @post = resource_post
+    @post = Post.find params[:id]
     @comment = Post::Comment.new
     add_breadcrumb :show, @post
   end
 
   def edit
     if current_user_owner?
-      @post = resource_post
+      @post = Post.find params[:id]
     else
       f(:error)
       redirect_to posts_path
@@ -47,7 +47,7 @@ class Web::PostsController < Web::ApplicationController
   end
 
   def update
-    @post = resource_post
+    @post = Post.find params[:id]
     if current_user_owner?
       @post = @post.becomes PostEditType
 

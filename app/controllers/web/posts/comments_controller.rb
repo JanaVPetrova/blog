@@ -1,12 +1,12 @@
-class Web::CommentsController < Web::ApplicationController
+class Web::Posts::CommentsController < Web::Posts::ApplicationController
   def create
-    @post = Post.find(params[:post_id])
+    @post = resource_post
     @comment = @post.comments.create(comment_params)
     redirect_to post_path(@post)
   end
 
   def destroy
-    @post = Post.find(params[:post_id])
+    @post = resource_post
     @comment = @post.comments.find(params[:id])
     if current_user == @comment.user
       @comment.destroy
