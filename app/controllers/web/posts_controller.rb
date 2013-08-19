@@ -1,7 +1,9 @@
 class Web::PostsController < Web::ApplicationController
+  add_breadcrumb :index, :posts_path
+
   def index
     @posts = Post.page params[:page]
-    add_breadcrumb :index, :posts_path
+    #add_breadcrumb :index, :posts_path
   end
 
   def new

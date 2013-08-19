@@ -1,6 +1,9 @@
 ru:
   breadcrumbs:
     web:
+      application:
+        home: "Домой"
+        index: "Все посты"
       posts:
         index: "Все посты"
         new: "Создать пост"
