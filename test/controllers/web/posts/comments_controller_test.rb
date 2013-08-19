@@ -10,7 +10,7 @@ class Web::Posts::CommentsControllerTest < ActionController::TestCase
     attrs = attributes_for 'post/comment'
     attrs[:user_id] = @comment.user.id
 
-    post :create, post_id: @comment.post, comment: attrs
+    post :create, post_id: @comment.post, post_comment: attrs
 
     assert_equal attrs[:body], Post::Comment.last.body
     assert_response :redirect
