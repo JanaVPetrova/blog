@@ -8,14 +8,15 @@ class Web::SessionsControllerTest < ActionController::TestCase
   test "should login" do
     attrs = { login: @user.login, password: @user.password }
     post :create, user_sign_in_type: attrs
+    assert_response :redirect
 
     assert_equal true, signed_in?
   end
 
   test "should logout" do
     delete :destroy
-
     assert_response :redirect
+
     assert !signed_in?
   end
 end

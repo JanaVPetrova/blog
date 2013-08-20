@@ -7,6 +7,7 @@ class Web::PostsControllerTest < ActionController::TestCase
   end
 
   test "should get index" do
+    get :index
     assert_response :success
     assert_not_nil @post
   end
@@ -15,9 +16,9 @@ class Web::PostsControllerTest < ActionController::TestCase
     sign_in @owner
     attrs = attributes_for :post
     post :create, post: attrs
+    assert_response :redirect
 
     assert_equal attrs[:title], Post.last.title
-    assert_response :redirect
   end
 
   test "should edit post" do
@@ -25,11 +26,11 @@ class Web::PostsControllerTest < ActionController::TestCase
 
     post_attrs = attributes_for :post
     put :update, id: @post, post: post_attrs
+    assert_response :redirect
 
     @post.reload
 
     assert_equal post_attrs[:title], @post.title
-    assert_response :redirect
   end
 
   test "should show post" do
@@ -39,14 +40,17 @@ class Web::PostsControllerTest < ActionController::TestCase
   test "should delete post" do
     sign_in @owner
     delete :destroy, id: @post
+    assert_response :redirect
 
     @post.reload
 
     assert_equal true, @post.deleted?
-    assert_response :redirect
   end
 
   test "should get edit" do
+    sign_in @owner
+
     get :edit, id: @post
+    assert_response :success
   end
 end

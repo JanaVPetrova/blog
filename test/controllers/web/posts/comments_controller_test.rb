@@ -11,16 +11,16 @@ class Web::Posts::CommentsControllerTest < ActionController::TestCase
     attrs[:user_id] = @comment.user.id
 
     post :create, post_id: @comment.post, post_comment: attrs
+    assert_response :redirect
 
     assert_equal attrs[:body], Post::Comment.last.body
-    assert_response :redirect
   end
 
   test "should destroy comment" do
     sign_in @comment.user
     delete :destroy, id: @comment, post_id: @comment.post
+    assert_response :redirect
 
     assert !Post::Comment.exists?(@comment)
-    assert_response :redirect
   end
 end
