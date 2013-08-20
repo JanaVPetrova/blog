@@ -11,11 +11,12 @@ class Post < ActiveRecord::Base
     state :published
     state :unpublished
 
-
     event :publish do
       transition :unpublished => :published
     end
   end
+
+  scope :published, -> { where state: "published" }
 
   state_machine :validation_state, initial: :restored do
     state :restored
