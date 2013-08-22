@@ -9,7 +9,7 @@ class Web::PostsControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil @post
+    assert { @post != nil }
   end
 
   test "should create post" do
@@ -18,7 +18,7 @@ class Web::PostsControllerTest < ActionController::TestCase
     post :create, post: attrs
     assert_response :redirect
 
-    assert_equal attrs[:title], Post.last.title
+    assert { attrs[:title] == Post.last.title }
   end
 
   test "should edit post" do
@@ -30,7 +30,7 @@ class Web::PostsControllerTest < ActionController::TestCase
 
     @post.reload
 
-    assert_equal post_attrs[:title], @post.title
+    assert { post_attrs[:title] == @post.title }
   end
 
   test "should show post" do
@@ -44,7 +44,7 @@ class Web::PostsControllerTest < ActionController::TestCase
 
     @post.reload
 
-    assert_equal true, @post.deleted?
+    assert { true == @post.deleted? }
   end
 
   test "should get edit" do

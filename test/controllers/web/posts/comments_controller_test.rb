@@ -13,7 +13,7 @@ class Web::Posts::CommentsControllerTest < ActionController::TestCase
     post :create, post_id: @comment.post, post_comment: attrs
     assert_response :redirect
 
-    assert_equal attrs[:body], Post::Comment.last.body
+    assert { attrs[:body] == Post::Comment.last.body }
   end
 
   test "should destroy comment" do
