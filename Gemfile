@@ -38,6 +38,7 @@ group :test do
   gem "coveralls", require: false
   gem "spring"
   gem "turn"
+  gem "wrong"
   gem "factory_girl_rails", "~> 4.0"
 end
 

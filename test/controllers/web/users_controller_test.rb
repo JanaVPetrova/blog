@@ -12,7 +12,7 @@ class Web::UsersControllerTest < ActionController::TestCase
     post :create, user: attrs
     assert_response :redirect
 
-    assert_equal User.last.login, attrs[:login]
+    assert { User.last.login == attrs[:login] }
   end
 
   test "should get index" do
@@ -31,7 +31,7 @@ class Web::UsersControllerTest < ActionController::TestCase
     assert_response :redirect
 
     @user.reload
-    assert_equal attrs[:login], @user.login
+    assert { attrs[:login] == @user.login }
   end
 
   test "should destroy user" do
@@ -39,6 +39,6 @@ class Web::UsersControllerTest < ActionController::TestCase
     delete :destroy, id: @user
     assert_response :redirect
 
-    assert !User.exists?(@user)
+    assert { User.exists?(@user) == nil }
   end
 end
