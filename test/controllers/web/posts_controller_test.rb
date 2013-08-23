@@ -3,6 +3,7 @@ require "test_helper"
 class Web::PostsControllerTest < ActionController::TestCase
   setup do
     @post = create :post
+    @post.publish
     @owner = create :owner
   end
 
