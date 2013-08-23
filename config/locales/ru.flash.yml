@@ -2,6 +2,10 @@ ru:
   flash:
     web:
       posts:
+        comments:
+          create:
+            success: "Комментарий успешно добавлен"
+            error: "Произошла ошибка"
         destroy:
           error: "Недостаточно прав"
         edit:

@@ -1,8 +1,14 @@
 class Web::Posts::CommentsController < Web::Posts::ApplicationController
   def create
-    @post = resource_post
-    @comment = @post.comments.create(comment_params)
-    redirect_to post_path(@post)
+    @comment = CommentEditType.new(params[:post_comment])
+    @comment.post = resource_post
+    @comment.user = current_user
+    if @comment.save
+      f(:success)
+    else
+      f(:error)
+    end
+    redirect_to post_path(resource_post)
   end
 
   def destroy
@@ -14,13 +20,5 @@ class Web::Posts::CommentsController < Web::Posts::ApplicationController
       f(:error)
     end
     redirect_to post_path(@post)
-  end
-
-  private
-  def comment_params
-    #FIXME по-человечески указывать user_id в comment_params
-    res = params.require(:post_comment).permit(:body, :parent_id)
-    res[:user_id] = current_user.id
-    res
   end
 end
