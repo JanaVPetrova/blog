@@ -35,6 +35,7 @@ ru:
           confirm: "Вы уверены?"
           commenter: "Имя"
           body: "Текст комментария"
+          comment_on: "Комментировать"
       form:
         cancel: "Отмена"
       index:
