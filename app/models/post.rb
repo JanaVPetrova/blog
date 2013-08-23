@@ -16,7 +16,8 @@ class Post < ActiveRecord::Base
     end
   end
 
-  scope :published, -> { where state: "published" }
+  #scope :published, -> { where state: "published" }
+  include PostRepository
 
   state_machine :validation_state, initial: :restored do
     state :restored

@@ -33,14 +33,14 @@ class Web::PostsController < Web::ApplicationController
   end
 
   def show
-    @post = Post.find params[:id]
+    @post = Post.published.find params[:id]
     @comment = Post::Comment.new
     add_breadcrumb :show, @post
   end
 
   def edit
     if current_user_owner?
-      @post = Post.find params[:id]
+      @post = Post.published.find params[:id]
     else
       f(:error)
       redirect_to posts_path
@@ -49,7 +49,7 @@ class Web::PostsController < Web::ApplicationController
   end
 
   def update
-    @post = Post.find params[:id]
+    @post = Post.published.find params[:id]
     if current_user_owner?
       @post = @post.becomes PostEditType
 
@@ -68,7 +68,7 @@ class Web::PostsController < Web::ApplicationController
 
   def destroy
     if current_user_owner?
-      @post = Post.find(params[:id])
+      @post = Post.published.find(params[:id])
       @post.mark_as_deleted
     else
       f(:error)
