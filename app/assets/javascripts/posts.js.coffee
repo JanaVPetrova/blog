@@ -4,6 +4,6 @@
 $(document).ready ->
   $('.comment-on-this').click ->
     id = $(@).context.id
-    $("#new_post_comment").find("span").remove()
-    $("#new_post_comment").prepend("<span><i>Вы собираетесь комментировать комментарий №#{id}<i></span>")
+    $("#new_post_comment").find(".alert").remove()
+    $("#new_post_comment").prepend("<div class='alert'><i>Вы собираетесь комментировать комментарий №#{id}<i></div>")
     $("#post_comment_parent_id").val(id)
