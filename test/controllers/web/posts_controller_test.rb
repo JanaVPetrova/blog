@@ -9,7 +9,7 @@ class Web::PostsControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert { @post != nil }
+    assert { @post }
   end
 
   test "should create post" do
@@ -44,7 +44,7 @@ class Web::PostsControllerTest < ActionController::TestCase
 
     @post.reload
 
-    assert { true == @post.deleted? }
+    assert { @post.deleted? }
   end
 
   test "should get edit" do
