@@ -55,9 +55,4 @@ class Web::UsersController < Web::ApplicationController
       redirect_to users_path
     end
   end
-
-  private
-  def user_params
-    params.require(:user).permit(:login, :password, :email)
-  end
 end
