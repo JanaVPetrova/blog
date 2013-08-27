@@ -10,4 +10,4 @@ $(document).ready ->
 
   $("#new_post_comment")
     .bind "ajax:complete", (event, data) ->
-      $("#post-comments").append("<div class='well well-small'>One new comment</div>")
+      $("#post-comments").append(data.responseText)
