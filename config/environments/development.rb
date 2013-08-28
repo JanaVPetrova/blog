@@ -25,16 +25,6 @@ Blog::Application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
-  config.assets.debug = true
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-    domain:               'baci.lindsaar.net',
-    user_name:            configus.mail.username,
-    password:             configus.mail.password,
-    authentication:       'plain',
-    enable_starttls_auto: true  }
 end
 
 ActionDispatch::Reloader.to_prepare do
