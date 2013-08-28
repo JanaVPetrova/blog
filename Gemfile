@@ -22,6 +22,7 @@ gem 'mini_magick'
 gem 'ancestry'
 gem 'validates'
 gem 'cocoon'
+gem 'ransack'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem "coffee-rails", "~> 4.0.0"
