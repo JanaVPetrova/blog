@@ -5,7 +5,6 @@ Blog::Application.routes.draw do
     end
 
     resources :posts do
-      collection { post :search, to: 'posts#index' }
       scope module: :posts do
         resources :comments
       end
