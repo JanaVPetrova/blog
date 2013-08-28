@@ -40,7 +40,7 @@ class Web::PostsController < Web::ApplicationController
 
   def edit
     if current_user_owner?
-      @post = Post.published.find params[:id]
+      @post = Post.find params[:id]
     else
       f(:error)
       redirect_to posts_path
@@ -49,7 +49,7 @@ class Web::PostsController < Web::ApplicationController
   end
 
   def update
-    @post = Post.published.find params[:id]
+    @post = Post.find params[:id]
     if current_user_owner?
       @post = @post.becomes PostEditType
 

@@ -26,6 +26,7 @@ class Web::UsersControllerTest < ActionController::TestCase
   end
 
   test "should update user" do
+    sign_in @user
     attrs = attributes_for :user
     post :update, id: @user, user: attrs
     assert_response :redirect

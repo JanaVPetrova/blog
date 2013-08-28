@@ -20,6 +20,7 @@ gem "term-ansicolor"
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'ancestry'
+gem 'validates'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem "coffee-rails", "~> 4.0.0"

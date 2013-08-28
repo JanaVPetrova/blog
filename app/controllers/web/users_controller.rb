@@ -10,7 +10,7 @@ class Web::UsersController < Web::ApplicationController
   end
 
   def create
-    @user = User.new user_params
+    @user = UserEditType.new params[:user]
 
     if @user.save
       redirect_to posts_path
@@ -31,10 +31,16 @@ class Web::UsersController < Web::ApplicationController
 
   def update
     @user = User.find params[:id]
+    if current_user == @user
+      @user = @user.becomes UserEditType
 
-    if @user.update_attributes user_params
-      redirect_to user_path(@user)
+      if @user.update_attributes params[:user]
+        redirect_to user_path(@user)
+      else
+        redirect_to edit_user_path(@user)
+      end
     else
+      f(:error)
       redirect_to edit_user_path(@user)
     end
   end
@@ -48,10 +54,5 @@ class Web::UsersController < Web::ApplicationController
       f(:error)
       redirect_to users_path
     end
-  end
-
-  private
-  def user_params
-    params.require(:user).permit(:login, :password)
   end
 end
