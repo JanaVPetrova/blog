@@ -7,6 +7,8 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :comments, dependent: :destroy
 
+  accepts_nested_attributes_for :comments, :reject_if => :all_blank, :allow_destroy => true
+
   state_machine :state, initial: :unpublished do
     state :published
     state :unpublished
