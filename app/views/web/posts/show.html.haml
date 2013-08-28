@@ -7,9 +7,10 @@
 %br
 = link_to t('.back'), posts_path
 
-%section#post-comments
-  %h4= t('.comments')
-  = #render @post.comments
-  = render partial: "web/posts/comments/comment", collection: @post.comments
+#post-comments-body
+  #post-comments
+    %h4= t('.comments')
+    = #render @post.comments
+    = render partial: "web/posts/comments/comment", collection: @post.comments
   %h4= t('.add_comment')
   = render "web/posts/comments/form"

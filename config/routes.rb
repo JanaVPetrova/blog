@@ -14,4 +14,12 @@ Blog::Application.routes.draw do
 
     root to: "welcome#index"
   end
+
+  namespace :api do
+    resources :posts do
+      scope module: :posts do
+        resources :comments
+      end
+    end
+  end
 end
