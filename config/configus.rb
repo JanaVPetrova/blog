@@ -7,6 +7,12 @@ Configus.build Rails.env do
     owner do
       login "owner"
       password "owner"
+      email "owner@mail.com"
+    end
+
+    mailer do
+      from "noreply@example.com"
+      host "example.com"
     end
   end
 

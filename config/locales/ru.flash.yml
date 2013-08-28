@@ -1,0 +1,25 @@
+ru:
+  flash:
+    web:
+      posts:
+        comments:
+          create:
+            success: "Комментарий успешно добавлен"
+            error: "Произошла ошибка"
+        destroy:
+          error: "Недостаточно прав"
+        edit:
+          error: "Недостаточно прав"
+        new:
+          error: "Недостаточно прав"
+        create:
+          success: "Пост создан"
+        update:
+          error: "Недостаточно прав"
+          success: "Пост успешно отредактирован"
+      comments:
+        destroy:
+          error: "Недостаточно прав"
+      users:
+        destroy:
+          error: "Недостаточно прав"

@@ -1,0 +1,16 @@
+.well.well-small
+  %p
+    %strong= comment.ancestry
+  %p
+    %strong= t('.commenter')
+    = comment.user.login
+
+  %p
+    %strong= t('.body')
+    %br
+    = comment.body
+
+  %p
+    = link_to t('.destroy'), post_comment_path(comment.post, comment), method: :delete, data: { :confirm => t('.confirm') }
+    %span{class: 'comment-on-this', id: comment.id}
+      = t('.comment_on')

@@ -39,8 +39,9 @@
 
       .row
         .span9
-          = yield
+          = render_breadcrumbs
           = bootstrap_flash
+          = yield
 
       %footer
         %p &copy; Company 2013

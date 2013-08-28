@@ -4,6 +4,7 @@ Coveralls.wear!
 ENV["RAILS_ENV"] ||= "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
+require "wrong"
 
 class ActiveSupport::TestCase
   ActiveRecord::Migration.check_pending!
@@ -14,5 +15,6 @@ class ActiveSupport::TestCase
   # -- they do not yet inherit this setting
   include FactoryGirl::Syntax::Methods
   include AuthHelper
+  include Wrong
   # Add more helper methods to be used by all tests here...
 end

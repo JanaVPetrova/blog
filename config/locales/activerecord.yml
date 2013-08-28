@@ -16,6 +16,7 @@ ru:
         state_event: 'Состояние'
         validation_state_event: 'Статус'
         validation_state: 'Статус'
+        image: "Изображение"
       comment:
         commenter: 'Имя'
         body: 'Текст комментария'

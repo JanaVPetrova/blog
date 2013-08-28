@@ -4,6 +4,7 @@ ruby "2.0.0"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
 gem "rails", "4.0.0"
 gem "pg"
+gem 'puma'
 
 gem "sass-rails", "~> 4.0.0"
 gem "uglifier", ">= 1.3.0"
@@ -15,6 +16,11 @@ gem "configus"
 gem "virtus"
 gem "twitter-bootstrap-rails"
 gem "russian"
+gem "term-ansicolor"
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'ancestry'
+gem 'validates'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem "coffee-rails", "~> 4.0.0"
@@ -32,8 +38,9 @@ end
 
 group :test do
   gem "coveralls", require: false
-  gem "tconsole"
+  gem "spring"
   gem "turn"
+  gem "wrong"
   gem "factory_girl_rails", "~> 4.0"
 end
 

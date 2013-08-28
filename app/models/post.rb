@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  mount_uploader :image, ImageUploader
+
   validates :title, presence: true,
                     length: { minimum: 5 }
 
@@ -9,11 +11,13 @@ class Post < ActiveRecord::Base
     state :published
     state :unpublished
 
-
     event :publish do
       transition :unpublished => :published
     end
   end
+
+  #scope :published, -> { where state: "published" }
+  include PostRepository
 
   state_machine :validation_state, initial: :restored do
     state :restored
