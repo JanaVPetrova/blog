@@ -7,7 +7,7 @@
   %tbody
     - @users.each do |user|
       %tr
-        %td= user.login
+        %td= user.full_name
         %td
           = link_to t('.show'), user_path(user), :class => 'btn btn-mini'
           = link_to t('.posts'), user_path(user), :class => 'btn btn-mini'
