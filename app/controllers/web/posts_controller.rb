@@ -3,7 +3,7 @@ class Web::PostsController < Web::ApplicationController
 
   def index
     @search = Post.search(params[:q])
-    @posts = @search.result.page params[:page]
+    @posts = @search.result.page(params[:page]).decorate
     #add_breadcrumb :index, :posts_path
   end
 
