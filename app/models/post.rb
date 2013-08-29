@@ -33,6 +33,4 @@ class Post < ActiveRecord::Base
       transition :deleted => :restored
     end
   end
-
-  paginates_per 10
 end
