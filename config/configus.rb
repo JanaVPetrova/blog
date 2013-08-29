@@ -1,7 +1,7 @@
 Configus.build Rails.env do
   env :development do
     pagination do
-      default 10
+      default 1
     end
 
     owner do
