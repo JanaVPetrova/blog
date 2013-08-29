@@ -26,6 +26,7 @@ gem 'cocoon'
 gem 'ransack'
 gem 'draper'
 gem "turbolinks"
+gem 'jbuilder'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem "therubyracer", platforms: :ruby
