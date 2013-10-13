@@ -1,0 +1,11 @@
+#filters
+  = search_form_for @search, :html => { :class => 'form-horizontal' } do |f|
+    = f.label :title
+    = f.text_field :title_cont
+    = f.label :text
+    = f.text_field :text_cont
+    = f.label :state
+    = f.text_field :state_eq
+    = f.label :validation_state
+    = f.text_field :validation_state_eq
+    = f.submit

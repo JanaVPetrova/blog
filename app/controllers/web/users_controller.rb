@@ -1,6 +1,6 @@
 class Web::UsersController < Web::ApplicationController
   def index
-    @users = User.all
+    @users = User.all.decorate
     add_breadcrumb :index, :users_path
   end
 
