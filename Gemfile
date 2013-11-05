@@ -5,7 +5,7 @@ ruby "2.0.0"
 gem "rails", "4.0.0"
 gem "pg"
 
-gem 'puma'
+gem 'unicorn'
 
 gem "configus"
 
@@ -38,8 +38,7 @@ end
 
 group :test do
   gem "coveralls", require: false
-  gem "spring"
-  gem "turn"
+  gem "tconsole"
   gem "wrong"
   gem "factory_girl_rails", "~> 4.0"
 end
