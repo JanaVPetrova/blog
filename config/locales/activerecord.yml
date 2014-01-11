@@ -11,8 +11,9 @@ ru:
         login: 'Логин'
         password: 'Пароль'
       post:
-        title: 'Название'
+        title: 'Вопрос'
         text: 'Текст'
+        subject: 'Предмет'
         state: 'Состояние'
         state_event: 'Состояние'
         validation_state_event: 'Статус'
