@@ -3,6 +3,7 @@
 %table.table.table-striped
   %thead
     %tr
+      %th= ham(:post, :subject)
       %th= ham(:post, :title)
       %th= ham(:post, :text)
       %th= ham(:post, :actions)
@@ -10,6 +11,7 @@
   %tbody
     - @posts.each do |post|
       %tr
+        %td= post.subject.title
         %td= post.title
         %td!= post.text
         %td

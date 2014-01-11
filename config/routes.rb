@@ -10,6 +10,7 @@ Blog::Application.routes.draw do
         resources :comments
       end
     end
+    resources :subjects, only: [:index, :new, :create, :show]
 
     resource :session
     resources :welcome, only: [:index]
