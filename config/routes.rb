@@ -11,6 +11,7 @@ Blog::Application.routes.draw do
     end
 
     resource :session
+    resources :welcome, only: [:index]
 
     root to: "posts#index"
   end
