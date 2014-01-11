@@ -4,19 +4,23 @@ ru:
       user: 'пользователь'
       post: 'Пост'
       comment: 'Комментарий'
+      subject: 'Предмет'
 
     attributes:
       user:
         login: 'Логин'
         password: 'Пароль'
       post:
-        title: 'Название'
+        title: 'Вопрос'
         text: 'Текст'
+        subject: 'Предмет'
         state: 'Состояние'
         state_event: 'Состояние'
         validation_state_event: 'Статус'
         validation_state: 'Статус'
         image: "Изображение"
+      subject:
+        title: "Название"
       comment:
         commenter: 'Имя'
         body: 'Текст комментария'

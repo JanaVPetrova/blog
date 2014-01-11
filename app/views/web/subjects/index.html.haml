@@ -1,0 +1,15 @@
+%h1= t('.listing_subjects')
+/ = render 'filters'
+%table.table.table-striped
+  %thead
+    %tr
+      %th= ham(:subject, :title)
+
+  %tbody
+    - @subjects.each do |subject|
+      %tr
+        %td= subject.title
+        %td
+          = link_to t('.show'), subject_path(subject), :class => 'btn btn-mini'
+= link_to t('.new'), new_subject_path, :class => 'btn btn-primary'
+= paginate @subjects

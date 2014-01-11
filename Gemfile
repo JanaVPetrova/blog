@@ -1,5 +1,4 @@
 source "https://rubygems.org"
-ruby "2.0.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
 gem "rails", "4.0.0"
@@ -25,8 +24,8 @@ gem 'validates'
 gem 'cocoon'
 gem 'ransack'
 gem 'draper'
-gem "turbolinks"
 gem 'jbuilder'
+gem "ckeditor", "4.0.2"
 
 # Use CoffeeScript for .js.coffee assets and views
 gem "therubyracer", platforms: :ruby

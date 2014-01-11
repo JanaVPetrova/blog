@@ -20,3 +20,4 @@ pickle-email-*.html
 /public/system
 /public/uploads
 /config/credentials.yml
+/config/database.yml

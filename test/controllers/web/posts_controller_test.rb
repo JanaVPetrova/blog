@@ -15,7 +15,7 @@ class Web::PostsControllerTest < ActionController::TestCase
 
   test "should create post" do
     sign_in @owner
-    attrs = attributes_for :post
+    attrs = attributes_for :post, subject_id: @post.subject
     post :create, post: attrs
     assert_response :redirect
 
