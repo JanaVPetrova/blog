@@ -19,6 +19,7 @@ Blog::Application.routes.draw do
 
     namespace :admin do
       resources :posts, only: [:index, :new, :create, :edit, :update, :destroy]
+      resources :subjects, only: [:new, :create]
     end
   end
 
