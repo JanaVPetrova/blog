@@ -1,0 +1,20 @@
+%h1= t('.listing_posts')
+/ = render 'filters'
+%table.table.table-striped
+  %thead
+    %tr
+      %th= ham(:post, :subject)
+      %th= ham(:post, :title)
+      %th= ham(:post, :actions)
+
+  %tbody
+    - @posts.each do |post|
+      %tr
+        %td= post.subject.title
+        %td= post.title
+        %td
+          = link_to t('edit'), edit_admin_post_path(post), :class => 'btn btn-mini'
+          - if post.restored?
+            = link_to t('destroy'), admin_post_path(post), method: :delete, data: { :confirm => t('confirm') }, class: 'btn btn-mini btn-danger'
+= link_to t('new'), new_admin_post_path, :class => 'btn btn-primary'
+= paginate @posts

@@ -12,10 +12,5 @@
       %tr
         %td= post.subject.title
         %td= post.title
-        %td
-          = link_to t('.show'), post_path(post), :class => 'btn btn-mini'
-          = link_to t('.edit'), edit_post_path(post), :class => 'btn btn-mini'
-          - if post.restored?
-            = link_to t('.destroy'), post_path(post), method: :delete, data: { :confirm => t('.confirm') }, class: 'btn btn-mini btn-danger'
-= link_to t('.new'), new_post_path, :class => 'btn btn-primary'
+        %td= link_to t('show'), post_path(post), :class => 'btn btn-mini'
 = paginate @posts
