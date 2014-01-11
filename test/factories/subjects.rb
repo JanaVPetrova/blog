@@ -1,7 +1,5 @@
 FactoryGirl.define do
-  factory :post do
+  factory :subject do
     title { generate :string }
-    text { generate :string }
-    subject
   end
 end

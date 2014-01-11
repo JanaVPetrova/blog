@@ -1,4 +1,5 @@
 Blog::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   scope module: :web do
     resources :users do
       resources :comments
@@ -9,10 +10,12 @@ Blog::Application.routes.draw do
         resources :comments
       end
     end
+    resources :subjects, only: [:index, :new, :create, :show]
 
     resource :session
+    resources :welcome, only: [:index]
 
-    root to: "welcome#index"
+    root to: "posts#index"
   end
 
   namespace :api do
