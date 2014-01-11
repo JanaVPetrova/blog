@@ -12,7 +12,7 @@ Blog::Application.routes.draw do
 
     resource :session
 
-    root to: "welcome#index"
+    root to: "posts#index"
   end
 
   namespace :api do
