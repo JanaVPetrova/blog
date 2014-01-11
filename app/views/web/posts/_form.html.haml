@@ -3,7 +3,6 @@
   = f.input :text
   = f.input :state_event, as: :state_event
   = f.input :validation_state_event, as: :state_event
-  = f.input :image
   = f.simple_fields_for :comments do |comment|
     = render 'comment_fields', :f => comment
   = f.button :submit, :class => 'btn-primary'

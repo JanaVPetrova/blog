@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130827100836) do
+ActiveRecord::Schema.define(version: 20140111175552) do
 
   create_table "post_comments", force: true do |t|
     t.text     "body"
@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20130827100836) do
     t.datetime "updated_at"
     t.string   "state"
     t.string   "validation_state"
-    t.string   "image"
   end
 
   create_table "users", force: true do |t|

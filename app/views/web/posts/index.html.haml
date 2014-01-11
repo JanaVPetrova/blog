@@ -3,7 +3,6 @@
 %table.table.table-striped
   %thead
     %tr
-      %th= ham(:post, :image)
       %th= ham(:post, :title)
       %th= ham(:post, :text)
       %th= ham(:post, :state)
@@ -13,8 +12,6 @@
   %tbody
     - @posts.each do |post|
       %tr
-        %td
-          %img{ src: post.image.thumb }
         %td= post.title
         %td= post.text
         %td= post.state
