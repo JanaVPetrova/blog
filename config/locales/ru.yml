@@ -1,4 +1,12 @@
 ru:
+  back: "Назад"
+  cancel: "Отмена"
+  confirm: "Вы уверены?"
+  destroy: "Удалить"
+  new: "Создать"
+  edit: "Редактировать"
+  show: "Показать"
+
   layouts:
     application:
       sign_in: "Войти"
@@ -10,20 +18,11 @@ ru:
     users:
       index:
         listing_users: "Список пользователей"
-        back: "Назад"
-        cancel: "Отмена"
-        confirm: "Вы уверены?"
-        destroy: "Удалить"
-        new: "Создать"
-        edit: "Редактировать"
-        show: "Показать"
         login: "Логин"
         actions: "Действия"
         posts: "Посты"
       edit:
         edit_user: "Редактировать пользователя"
-        back: "Назад"
-        cancel: "Отмена"
       destroy:
         access_denied: "Недостаточно прав"
       show:
@@ -32,8 +31,6 @@ ru:
     posts:
       comments:
         comment:
-          destroy: "Удалить"
-          confirm: "Вы уверены?"
           commenter: "Имя"
           body: "Текст комментария"
           comment_on: "Комментировать"
@@ -41,11 +38,6 @@ ru:
         cancel: "Отмена"
       index:
         listing_posts: "Список постов"
-        confirm: "Вы уверены?"
-        destroy: "Удалить"
-        new: "Создать"
-        edit: "Редактировать"
-        show: "Показать"
         title: "Название"
         text: "Текст"
         state: "Сотояние"
@@ -53,20 +45,14 @@ ru:
         actions: "Действия"
       new:
         new_post: "Новый пост"
-        back: "Назад"
-        cancel: "Отмена"
         access_denied: "Недостаточно прав"
         post_image: "Картинка"
       edit:
         edit_post: "Редактировать пост"
-        back: "Назад"
         access_denied: "Недостаточно прав"
       show:
         comments: "Комметарии"
         add_comment: "Добавить комментарий"
-        back: "Назад"
-        edit: "Редактировать"
-        comfirm: "Вы уверены?"
         access_denied: "Недостаточно прав"
       destroy:
         access_denied: "Недостаточно прав"
@@ -77,10 +63,7 @@ ru:
       comment:
         commenter: "Имя"
         comment: "Текст комментария"
-        destroy: "Удалить"
-        confirm: "Вы уверены?"
       destroy:
-        confirm: "Вы уверены?"
         access_denied: "Недостаточно прав"
     sessions:
       new:
