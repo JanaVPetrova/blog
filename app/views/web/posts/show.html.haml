@@ -1,6 +1,7 @@
-%p
-  %h1= @post.title
-%p= @post.text
+%h1
+  = @post.subject.title
+%strong= @post.title
+%p!= @post.text
 
 = link_to t('.edit'), edit_post_path(@post)
 %br
@@ -9,7 +10,6 @@
 #post-comments-body
   #post-comments
     %h4= t('.comments')
-    = #render @post.comments
     = render partial: "web/posts/comments/comment", collection: @post.comments
   %h4= t('.add_comment')
   = render "web/posts/comments/form"
