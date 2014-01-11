@@ -5,7 +5,6 @@
     %tr
       %th= ham(:post, :subject)
       %th= ham(:post, :title)
-      %th= ham(:post, :text)
       %th= ham(:post, :actions)
 
   %tbody
@@ -13,7 +12,6 @@
       %tr
         %td= post.subject.title
         %td= post.title
-        %td!= post.text
         %td
           = link_to t('.show'), post_path(post), :class => 'btn btn-mini'
           = link_to t('.edit'), edit_post_path(post), :class => 'btn btn-mini'
