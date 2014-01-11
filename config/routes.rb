@@ -1,4 +1,5 @@
 Blog::Application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   scope module: :web do
     resources :users do
       resources :comments

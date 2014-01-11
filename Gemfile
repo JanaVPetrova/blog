@@ -24,8 +24,8 @@ gem 'validates'
 gem 'cocoon'
 gem 'ransack'
 gem 'draper'
-gem "turbolinks"
 gem 'jbuilder'
+gem "ckeditor", "4.0.2"
 
 # Use CoffeeScript for .js.coffee assets and views
 gem "therubyracer", platforms: :ruby
