@@ -8,5 +8,5 @@
   %tbody
     - @subjects.each do |subject|
       %tr
-        %td= link_to subject.title, subject_path(subject)
-= paginate @subjects
+        %td= subject.title
+= link_to t('new'), new_admin_subject_path, :class => 'btn btn-primary'
