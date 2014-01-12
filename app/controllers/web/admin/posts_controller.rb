@@ -12,7 +12,7 @@ class Web::Admin::PostsController < Web::Admin::ApplicationController
     @post = PostEditType.new(params[:post])
     if @post.save
       f(:success)
-      redirect_to posts_path
+      redirect_to admin_posts_path
     else
       f(:error)
       render 'new'
@@ -29,7 +29,7 @@ class Web::Admin::PostsController < Web::Admin::ApplicationController
 
     if @post.update_attributes params[:post]
       f(:success)
-      redirect_to posts_path
+      redirect_to admin_posts_path
     else
       f(:error)
       render 'edit'
@@ -37,8 +37,8 @@ class Web::Admin::PostsController < Web::Admin::ApplicationController
   end
 
   def destroy
-    @post = Post.published.find(params[:id])
+    @post = Post.find(params[:id])
     @post.mark_as_deleted
-    redirect_to posts_path
+    redirect_to admin_posts_path
   end
 end

@@ -4,11 +4,11 @@
 %p!= @post.text
 
 %br
-= link_to t('back'), posts_path
+= link_to t('back'), posts_path, class: 'btn btn-primary'
 
-#post-comments-body
-  #post-comments
-    %h4= t('.comments')
-    = render partial: "web/posts/comments/comment", collection: @post.comments
-  %h4= t('.add_comment')
-  = render "web/posts/comments/form"
+/ #post-comments-body
+/   #post-comments
+/     %h4= t('.comments')
+/     = render partial: "web/posts/comments/comment", collection: @post.comments
+/   %h4= t('.add_comment')
+/   = render "web/posts/comments/form"
