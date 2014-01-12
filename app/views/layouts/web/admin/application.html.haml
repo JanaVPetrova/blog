@@ -11,25 +11,14 @@
     /[if lt IE 9]
       = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
     = stylesheet_link_tag "application", :media => "all"
-    = favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
-    = favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'
-    = favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'
-    = favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
-    = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
-
 
   %body
     %nav.navbar.navbar-default{role: :navigation}
       .collapse.navbar-collapse
         %ul.nav.navbar-nav
-          %li= link_to t('.blog'), posts_path
-          %li= link_to t('.subjects'), subjects_path
-          - if signed_in?
-            %li= link_to current_user.login, user_path(current_user)
-            %li= link_to t('.sign_out'), session_path, method: :delete
-          - else
-            %li= link_to t('.sign_in'), new_session_path
-            %li= link_to t('.register'), new_user_path
+          %li= link_to t('.posts'), admin_posts_path
+          %li= link_to t('.subjects'), admin_subjects_path
+          %li= link_to t('back'), root_path
 
     .container
       .row

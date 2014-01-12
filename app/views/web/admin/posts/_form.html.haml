@@ -1,4 +1,4 @@
-= simple_form_for @post, :html => { :class => 'form-horizontal' } do |f|
+= simple_form_for @post, url: url, defaults: { input_html: { class: 'form-control' } } do |f|
   = f.association :subject
   = f.input :title
   = f.input :text, input_html: {class: 'ckeditor', toolbar: 'Easy'}

@@ -1,12 +1,10 @@
 %h1= t('.listing_subjects')
-/ = render 'filters'
-%table.table.table-striped
-  %thead
-    %tr
-      %th= ham(:subject, :title)
 
-  %tbody
-    - @subjects.each do |subject|
-      %tr
-        %td= link_to subject.title, subject_path(subject)
+%ul.list-group
+  - @subjects.each do |subject|
+    %li.list-group-item
+      = link_to subject_posts_path(subject) do
+        = subject.title
+        %span.badge
+          = subject.posts.count
 = paginate @subjects

@@ -1,5 +1,5 @@
 %h1= t '.edit_post'
 
-= render 'form'
+= render 'form', url: admin_post_path(@post)
 
 = link_to t('back'), admin_posts_path

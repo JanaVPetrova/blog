@@ -10,7 +10,7 @@ class Web::SessionsController < Web::ApplicationController
     if @session.valid?
       sign_in @session.user
       UserMailer.greet_email(@session.user).deliver
-      redirect_to users_path
+      redirect_to root_path
     else
       render 'new'
     end
@@ -18,7 +18,7 @@ class Web::SessionsController < Web::ApplicationController
 
   def destroy
     sign_out
-    redirect_to users_path
+    redirect_to root_path
   end
 
   private
