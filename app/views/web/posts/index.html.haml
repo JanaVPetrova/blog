@@ -1,16 +1,17 @@
 %h1= t('.listing_posts')
 / = render 'filters'
-%table.table.table-striped
-  %thead
-    %tr
-      %th= ham(:post, :subject)
-      %th= ham(:post, :title)
-      %th= ham(:post, :actions)
+%ul.list-group
+  %li.list-group-item
+    .row
+      .col-md-3
+        %strong= ham(:post, :subject)
+      .col-md-9
+        %strong= ham(:post, :title)
 
-  %tbody
-    - @posts.each do |post|
-      %tr
-        %td= post.subject.title
-        %td= post.title
-        %td= link_to t('show'), post_path(post), :class => 'btn btn-mini'
-= paginate @posts
+  - @posts.each do |post|
+    %li.list-group-item
+      .row
+        .col-md-3
+          = link_to post.subject.title, subject_posts_path(post.subject)
+        .col-md-9
+          = link_to post.title, post_path(post)
