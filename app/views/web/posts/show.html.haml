@@ -3,9 +3,8 @@
 %strong= @post.title
 %p!= @post.text
 
-= link_to t('.edit'), edit_post_path(@post)
 %br
-= link_to t('.back'), posts_path
+= link_to t('back'), posts_path
 
 #post-comments-body
   #post-comments
