@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  include AuthHelper
+  include Concerns::AuthHelper
   include Concerns::FlashHelper
   helper_method :current_user, :signed_in?
   # Prevent CSRF attacks by raising an exception.
