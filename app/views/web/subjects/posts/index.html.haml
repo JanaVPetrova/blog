@@ -1,0 +1,11 @@
+%h1= resource_subject.title
+/ = render 'filters'
+%table.table.table-striped
+  %thead
+    %tr
+      %th= ham(:post, :title)
+
+  %tbody
+    - @posts.each do |post|
+      %tr
+        %td= link_to post.title, post_path(post)
