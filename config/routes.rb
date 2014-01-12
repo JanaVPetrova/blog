@@ -19,11 +19,14 @@ Blog::Application.routes.draw do
     resource :session
     resources :welcome, only: [:index]
 
-    root to: "posts#index"
+    root to: "subjects#index"
 
     namespace :admin do
       resources :posts, only: [:index, :new, :create, :edit, :update, :destroy]
       resources :subjects, only: [:index, :new, :create]
+      resource :welcome, only: [:show]
+
+      root to: "welcome#show"
     end
   end
 
