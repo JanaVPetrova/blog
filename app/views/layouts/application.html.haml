@@ -19,26 +19,19 @@
 
 
   %body
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          .container.nav-collapse
-            %ul.nav
-              %li= link_to t('.blog'), posts_path
-              %li= link_to t('.subjects'), subjects_path
-              - if signed_in?
-                %li= link_to current_user.login, user_path(current_user)
-                %li= link_to t('.sign_out'), session_path, method: :delete
-              - else
-                %li= link_to t('.sign_in'), new_session_path
-                %li= link_to t('.register'), new_user_path
+    %nav.navbar.navbar-default{role: :navigation}
+      .collapse.navbar-collapse
+        %ul.nav.navbar-nav
+          %li= link_to t('.blog'), posts_path
+          %li= link_to t('.subjects'), subjects_path
+          - if signed_in?
+            %li= link_to current_user.login, user_path(current_user)
+            %li= link_to t('.sign_out'), session_path, method: :delete
+          - else
+            %li= link_to t('.sign_in'), new_session_path
+            %li= link_to t('.register'), new_user_path
 
     .container
-
       .row
         .span9
           = render_breadcrumbs
