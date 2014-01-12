@@ -10,7 +10,8 @@ gem "configus"
 
 gem "haml-rails"
 gem "simple_form", "~> 3.0.0.rc"
-gem "twitter-bootstrap-rails"
+gem "twitter-bootstrap-rails", github: "seyhunak/twitter-bootstrap-rails",
+                               branch: "bootstrap3"
 
 gem "state_machine"
 gem "kaminari"
