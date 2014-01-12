@@ -6,5 +6,5 @@
       = link_to subject_posts_path(subject) do
         = subject.title
         %span.badge
-          = subject.posts.count
+          = subject.published_posts.count
 = paginate @subjects
