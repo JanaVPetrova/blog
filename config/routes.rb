@@ -10,7 +10,11 @@ Blog::Application.routes.draw do
         resources :comments
       end
     end
-    resources :subjects, only: [:index, :show]
+    resources :subjects, only: [:index, :show] do
+      scope module: :subjects do
+        resources :posts, only: [:index]
+      end
+    end
 
     resource :session
     resources :welcome, only: [:index]
