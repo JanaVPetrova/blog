@@ -5,5 +5,4 @@ class PostEditType < Post
          comments_attributes: [:id, :body, :parent_id]
 
   validates :title, presence: true
-  validates :text, presence: true
 end
