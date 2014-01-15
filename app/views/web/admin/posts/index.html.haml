@@ -2,10 +2,12 @@
 
 .row
   .col-md-2
-    %strong= ham(:post, :subject)
-  .col-md-6
-    %strong= ham(:post, :title)
-  .col-md-4
+    %strong= sort_link @search, :subject
+  .col-md-5
+    %strong= sort_link @search, :title
+  .col-md-2
+    %strong= sort_link @search, :state
+  .col-md-3
     %strong= ham(:post, :actions)
 
 
@@ -13,9 +15,11 @@
   .row
     .col-md-2
       = post.subject.title
-    .col-md-6
+    .col-md-5
       = link_to post.title, edit_admin_post_path(post)
-    .col-md-4
+    .col-md-2
+      = post.state
+    .col-md-3
       - if post.restored?
         = link_to t('destroy'), admin_post_path(post), method: :delete, data: { :confirm => t('confirm') }, class: 'btn btn-sm btn-danger'
 
