@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140111185357) do
+ActiveRecord::Schema.define(version: 20140115131045) do
 
   create_table "ckeditor_assets", force: true do |t|
     t.string   "data_file_name",               null: false
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20140111185357) do
   add_index "post_comments", ["post_id"], name: "index_post_comments_on_post_id", using: :btree
 
   create_table "posts", force: true do |t|
-    t.string   "title"
+    t.text     "title"
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
