@@ -1,0 +1,15 @@
+%h1= t('.listing_subjects')
+%table.table.table-striped
+  %thead
+    %tr
+      %th= ham(:user, :login)
+      %th= ham(:user, :actions)
+
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= user.login
+        %td
+          = link_to t(".approve"), admin_user_path(user, {user: {approvement_state_event: :approve}}), method: :patch, class: 'btn btn-sm btn-success' if user.unapproved?
+          = link_to t(".unapprove"), admin_user_path(user, {user: {approvement_state_event: :unapprove}}), method: :patch, class: 'btn btn-sm btn-danger' if user.approved?
+

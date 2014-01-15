@@ -25,6 +25,7 @@ Blog::Application.routes.draw do
       resources :posts, only: [:index, :new, :create, :edit, :update, :destroy]
       resources :subjects, only: [:index, :new, :create]
       resource :welcome, only: [:show]
+      resources :users, only: [:index, :update]
 
       root to: "welcome#show"
     end
