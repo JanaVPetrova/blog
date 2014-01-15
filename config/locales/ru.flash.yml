@@ -1,6 +1,10 @@
 ru:
   flash:
     web:
+      subjects:
+        posts:
+          index:
+            error: "Недостаточно прав"
       posts:
         comments:
           create:
@@ -17,6 +21,8 @@ ru:
         update:
           error: "Недостаточно прав"
           success: "Пост успешно отредактирован"
+        index:
+          error: "Недостаточно прав"
       comments:
         destroy:
           error: "Недостаточно прав"

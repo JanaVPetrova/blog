@@ -1,5 +1,6 @@
 class Web::PostsController < Web::ApplicationController
   add_breadcrumb :index, :posts_path
+  before_filter :authentificate_approved_user!
 
   def index
     @search = Post.web.published.search(params[:q])

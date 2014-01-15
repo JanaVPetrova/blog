@@ -18,6 +18,14 @@ module Concerns
       end
     end
 
+    def authentificate_approved_user!
+      #FIXME
+      unless current_user && current_user.approved?
+        f(:error)
+        redirect_to root_path
+      end
+    end
+
     def current_user_owner?
       current_user.login == configus.owner.login && current_user.password == configus.owner.password
     end
