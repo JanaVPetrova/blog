@@ -41,6 +41,7 @@ group :test do
   gem "tconsole"
   gem "wrong"
   gem "factory_girl_rails", "~> 4.0"
+  gem "pry"
 end
 
 group :production do

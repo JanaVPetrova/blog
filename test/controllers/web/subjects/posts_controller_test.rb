@@ -3,6 +3,9 @@ require 'test_helper'
 class Web::Subjects::PostsControllerTest < ActionController::TestCase
   setup do
     @post = create :post
+
+    @user = create :approved_user
+    sign_in @user
   end
 
   test "should get index" do
