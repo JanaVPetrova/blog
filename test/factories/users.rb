@@ -10,4 +10,10 @@ FactoryGirl.define do
     password { configus.owner.password }
     email { configus.owner.email }
   end
+
+  factory :approved_user, parent: :user do
+    after(:build) do |u|
+      u.approve
+    end
+  end
 end

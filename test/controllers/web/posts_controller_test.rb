@@ -4,6 +4,9 @@ class Web::PostsControllerTest < ActionController::TestCase
   setup do
     @post = create :post
     @post.publish
+
+    @user = create :approved_user
+    sign_in @user
   end
 
   test "should get index" do
