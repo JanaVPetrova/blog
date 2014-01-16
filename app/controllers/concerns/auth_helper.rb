@@ -12,6 +12,7 @@ module Concerns
       !session[:user_id].nil?
     end
 
+    #FIXME use roles
     def authentificate_admin!
       unless current_user && current_user_owner?
         redirect_to new_session_path

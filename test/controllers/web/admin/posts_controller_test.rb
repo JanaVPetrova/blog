@@ -4,8 +4,9 @@ class Web::Admin::PostsControllerTest < ActionController::TestCase
   setup do
     @post = create :post
     @post.publish
-    @owner = create :owner
-    sign_in @owner
+
+    @approved_user = create :approved_user
+    sign_in @approved_user
   end
 
   test "should get index" do
@@ -15,7 +16,6 @@ class Web::Admin::PostsControllerTest < ActionController::TestCase
   end
 
   test "should create post" do
-    sign_in @owner
     attrs = attributes_for :post, subject_id: @post.subject
     post :create, post: attrs
     assert_response :redirect
@@ -24,7 +24,6 @@ class Web::Admin::PostsControllerTest < ActionController::TestCase
   end
 
   test "should edit post" do
-    sign_in @owner
 
     post_attrs = attributes_for :post
     put :update, id: @post, post: post_attrs
@@ -36,7 +35,6 @@ class Web::Admin::PostsControllerTest < ActionController::TestCase
   end
 
   test "should delete post" do
-    sign_in @owner
     delete :destroy, id: @post
     assert_response :redirect
 
@@ -46,8 +44,6 @@ class Web::Admin::PostsControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    sign_in @owner
-
     get :edit, id: @post
     assert_response :success
   end

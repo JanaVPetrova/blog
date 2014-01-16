@@ -9,7 +9,6 @@ class Web::SessionsController < Web::ApplicationController
 
     if @session.valid?
       sign_in @session.user
-      UserMailer.greet_email(@session.user).deliver
       redirect_to root_path
     else
       render 'new'
