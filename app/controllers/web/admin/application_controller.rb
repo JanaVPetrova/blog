@@ -1,3 +1,4 @@
 class Web::Admin::ApplicationController < Web::ApplicationController
-  before_filter :authentificate_admin!
+  #FIXME
+  before_filter :authentificate_approved_user!
 end

@@ -3,8 +3,9 @@ require 'test_helper'
 class Web::Admin::SubjectsControllerTest < ActionController::TestCase
   setup do
     @subject = create :subject
-    @owner = create :owner
-    sign_in @owner
+
+    @approved_user = create :approved_user
+    sign_in @approved_user
   end
 
   test "should get index"  do
@@ -18,7 +19,6 @@ class Web::Admin::SubjectsControllerTest < ActionController::TestCase
   end
 
   test "should create subject" do
-    sign_in @owner
     attrs = attributes_for :subject
     post :create, subject: attrs
     assert_response :redirect

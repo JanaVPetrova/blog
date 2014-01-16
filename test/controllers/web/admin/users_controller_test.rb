@@ -2,8 +2,9 @@ require 'test_helper'
 
 class Web::Admin::UsersControllerTest < ActionController::TestCase
   setup do
-    @owner = create :owner
     @user = create :user
+
+    @owner = create :owner
     sign_in @owner
   end
 
