@@ -1,4 +1,7 @@
 class Web::Admin::UsersController < Web::Admin::ApplicationController
+  #FIXME
+  before_filter :authentificate_admin!
+
   def index
     @users = User.all
   end
