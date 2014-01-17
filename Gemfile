@@ -27,6 +27,8 @@ gem 'ransack'
 gem 'draper'
 gem 'jbuilder'
 gem "ckeditor", "4.0.2"
+gem 'usefull_scopes'
+gem 'auditable'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem "therubyracer", platforms: :ruby

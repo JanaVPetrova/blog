@@ -3,7 +3,7 @@ class Web::PostsController < Web::ApplicationController
   before_filter :authentificate_approved_user!
 
   def index
-    @search = Post.web.published.search(params[:q])
+    @search = Post.web.published.asc_by_title.search(params[:q])
     @posts = @search.result.page(params[:page]).decorate
   end
 
