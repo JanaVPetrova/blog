@@ -17,5 +17,12 @@ Configus.build Rails.env do
   end
 
   env :test, parent: :development
-  env :production, parent: :development
+
+  env :production, parent: :development do
+    owner do
+      login ENV['OWNER_LOGIN']
+      password ENV['OWNER_PASSWORD']
+      email ENV['OWNER_EMAIL']
+    end
+  end
 end
