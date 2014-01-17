@@ -3,6 +3,8 @@ class Web::Subjects::PostsController < Web::Subjects::ApplicationController
   before_filter :authentificate_approved_user!
 
   def index
-    @posts = resource_subject.published_posts.asc_by_title
+    query = { s: 'title asc' }.merge(params[:q] || {})
+    search = resource_subject.posts.web.published.search(query)
+    @posts = search.result
   end
 end
