@@ -1,6 +1,6 @@
 class Web::Admin::PostsController < Web::Admin::ApplicationController
   def index
-    @search = Post.web.search(params[:q])
+    @search = Post.web.asc_by_title.search(params[:q])
     @posts = @search.result.page(params[:page]).decorate
   end
 
