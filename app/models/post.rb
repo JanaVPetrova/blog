@@ -6,7 +6,10 @@ class Post < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :subject
+
   has_many :comments, dependent: :destroy
+
+  audit :title, :subject, :text
 
   accepts_nested_attributes_for :comments, reject_if: :all_blank, allow_destroy: true
 

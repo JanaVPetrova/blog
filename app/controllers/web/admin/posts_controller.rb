@@ -10,6 +10,7 @@ class Web::Admin::PostsController < Web::Admin::ApplicationController
 
   def create
     @post = PostEditType.new(params[:post])
+    @post.changed_by = current_user
     if @post.save
       f(:success)
       redirect_to admin_posts_path
@@ -26,6 +27,7 @@ class Web::Admin::PostsController < Web::Admin::ApplicationController
   def update
     @post = Post.find params[:id]
     @post = @post.becomes PostEditType
+    @post.changed_by = current_user
 
     if @post.update_attributes params[:post]
       f(:success)
