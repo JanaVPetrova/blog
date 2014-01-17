@@ -1,6 +1,7 @@
 class Web::Admin::PostsController < Web::Admin::ApplicationController
   def index
-    @search = Post.web.asc_by_title.search(params[:q])
+    query = { s: 'title asc' }.merge(params[:q] || {})
+    @search = Post.web.search(query)
     @posts = @search.result.page(params[:page]).decorate
   end
 
